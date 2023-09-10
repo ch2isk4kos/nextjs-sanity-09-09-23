@@ -1,6 +1,8 @@
 import { createClient, groq } from "next-sanity";
+import { Post } from "@/ts-types/Post";
 
-export async function getPosts() {
+// anywhere that uses this utility function will return a Promise with an array of Post objects
+export async function getPosts(): Promise<Post[]> {
   const client = createClient({
     projectId: "p0m10kju",
     dataset: "production",
