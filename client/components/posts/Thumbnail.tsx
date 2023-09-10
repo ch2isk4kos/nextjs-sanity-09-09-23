@@ -1,4 +1,4 @@
-function Post() {
+function Thumbnail({ ...props }) {
   return (
     <div>
       {/*  */}
@@ -8,4 +8,4 @@ function Post() {
   )
 }
 
-export default Post;
+export default Thumbnail;
