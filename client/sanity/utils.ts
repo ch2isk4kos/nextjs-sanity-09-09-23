@@ -8,7 +8,7 @@ export async function getPosts() {
   });
 
   return client.fetch(
-    groq`*[_type = "post"]{
+    groq`*[_type == "post"]{
       _id,
       _createdAt,
       title,
