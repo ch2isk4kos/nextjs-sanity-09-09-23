@@ -1,8 +1,18 @@
-"use client" // render sanity on the next.js client rather than the server
+import { getPosts } from "@/sanity/utils";
 
-function PostsPage() {
+async function PostsPage() {
+  const posts = await getPosts();
   return (
-    <h1>Posts</h1>
+    <>
+      <h1>Posts</h1>
+      <div>
+        {posts.map((post) => (
+          <div key={post._id}>
+            {post.title}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
