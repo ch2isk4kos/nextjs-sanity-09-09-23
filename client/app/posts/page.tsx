@@ -2,6 +2,7 @@ import { getPosts } from "@/sanity/utils";
 
 async function PostsPage() {
   const posts = await getPosts();
+
   return (
     <>
       <h1>Posts</h1>
