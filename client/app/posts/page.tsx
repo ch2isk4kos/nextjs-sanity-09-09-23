@@ -1,3 +1,4 @@
+import Thumbnail from "@/components/posts/Thumbnail";
 import { getPosts } from "@/sanity/utils";
 
 // TailwindCSS variables
@@ -15,9 +16,10 @@ async function PostsPage() {
       <div>
         <h2 className={h2}>Highlights</h2>
         {posts.map((post) => (
-          <div key={post._id}>
-            {post.title}
-          </div>
+          // <div key={post._id}>
+          //   {post.title}
+          // </div>
+          <Thumbnail key={post._id} title={post.title} />
         ))}
       </div>
     </div>
