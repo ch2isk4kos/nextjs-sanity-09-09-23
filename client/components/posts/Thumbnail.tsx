@@ -7,7 +7,6 @@ const pDate = `display-0 text-xs`;
 const pDescription = ``;
 
 function Thumbnail({ ...props }) {
-  // console.log(Date(props.date));
   const {date, description, image, title} = props;
   const frmt = new Date(date);
 
