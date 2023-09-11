@@ -10,7 +10,7 @@ const client = createClient({
 // anywhere that uses this utility function will return a Promise with an array of Post objects
 export async function getPosts(): Promise<Post[]> {
   return client.fetch(
-    groq`*[_type == "post"]{
+    groq`*[_type == "post"] | order(_createdAt desc){
       _id,
       _createdAt,
       title,
@@ -25,7 +25,7 @@ export async function getPosts(): Promise<Post[]> {
 // returns 3 most recent posts
 export async function getRecentPosts(): Promise<Post[]> {
   return client.fetch(
-    groq`*[_type == "post"] | order(_createdAt desc) [0..2]{
+    groq`*[_type == "post"] | order(_createdAt desc)[0..2]{
       _id,
       _createdAt,
       title,
